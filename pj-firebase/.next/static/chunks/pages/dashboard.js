@@ -1,10 +1,10 @@
-__turbopack_load_page_chunks__("/Login", [
-  "static/chunks/node_modules_next_9be927._.js",
+__turbopack_load_page_chunks__("/dashboard", [
+  "static/chunks/node_modules_next_3fff62._.js",
   "static/chunks/node_modules_react-dom_82bb97._.js",
   "static/chunks/node_modules_@firebase_auth_dist_esm2017_fab3d3._.js",
   "static/chunks/node_modules_@firebase_firestore_dist_index_esm2017_06c08c.js",
   "static/chunks/node_modules_7b9c66._.js",
-  "static/chunks/[root of the server]__894e53._.js",
-  "static/chunks/src_pages_Login_5771e1._.js",
-  "static/chunks/src_pages_Login_2d1718._.js"
+  "static/chunks/[root of the server]__2e6ef9._.js",
+  "static/chunks/src_pages_dashboard_5771e1._.js",
+  "static/chunks/src_pages_dashboard_1096e0._.js"
 ])

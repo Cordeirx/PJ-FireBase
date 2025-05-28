@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 export default function Register() {
     const [name, setName] = useState('');
@@ -47,9 +48,9 @@ export default function Register() {
                     required
                 />
 
-                <label>Portifólio (Link)</label>
+                <label>Portfólio (Link)</label>
                 <input
-                    type="link"
+                    type="url"
                     value={link}
                     onChange={(e) => setLink(e.target.value)}
                     required
@@ -76,6 +77,8 @@ export default function Register() {
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {success && <p style={{ color: 'green' }}>{success}</p>}
             </form>
+
+            <p>Já tem uma conta? <Link href="/Login">Faça login aqui</Link></p>
         </div>
     );
 }
