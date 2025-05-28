@@ -36,25 +36,16 @@ export default function Dashboard() {
         router.push('/');
     }
 
-  return (
-  <div>
-    <h1>Bem-vindo, {profile.name}!</h1>
-    <p>Bio: {profile.bio}</p>
-    <p>
-      Portfólio: {profile.portfolio ? (
-        <a
-          href={profile.portfolio.startsWith('http') ? profile.portfolio : `https://${profile.portfolio}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Ver Agora
-        </a>
-      ) : (
-        <span>Portfólio não disponível</span>
-      )}
-    </p>
-    <button onClick={handleLogout}>Sair</button>
-  </div>
-);
-
+    return (
+        <div>
+            <h1>Bem-vindo, {profile.name}!</h1>
+            <p>Bio: {profile.bio}</p>
+            <p>
+                Portfólio: <a href={profile.link} target="_blank">
+                    Ver Agora
+                </a>
+            </p>
+            <button onClick={handleLogout}>Sair</button>
+        </div>
+    );
 }

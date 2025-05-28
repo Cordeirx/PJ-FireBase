@@ -11,8 +11,10 @@ export default function Login() {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        await login(email, password);
-        router.push("/dashboard");  // Redireciona para o Dashboard
+        const success = await login(email, password);
+        if (success) {
+            router.push("/dashboard");
+        }
     }
 
     return (
@@ -36,7 +38,7 @@ export default function Login() {
 
                 <button type="submit">Entrar</button>
 
-                {error && <p>{error}</p>}
+                {error && <p style={{ color: 'red' }}>{error}</p>}
             </form>
 
             <p>Não tem uma conta? <Link href="/Register">Cadastre-se aqui</Link></p>

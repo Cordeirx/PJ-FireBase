@@ -1,4 +1,4 @@
-'use client';  // Se estiver usando app router no Next.js 13+
+'use client';
 import { useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { useRouter } from 'next/router';
@@ -11,21 +11,22 @@ export default function Register() {
     const [link, setLink] = useState('');
     const [password, setPassword] = useState('');
     const [success, setSuccess] = useState('');
-    
+
     const { register, error } = useAuth();
     const router = useRouter();
 
     async function handleSubmit(e) {
         e.preventDefault();
-        await register(email, password, name, bio, link);
 
-        if (!error) {
+        const success = await register(email, password, name, bio, link);
+
+        if (success) {
             setSuccess('Cadastro realizado com sucesso!');
-            
-            // Aguarda 2 segundos e redireciona
             setTimeout(() => {
                 router.push('/Login');
             }, 2000);
+        } else {
+            setSuccess(''); // limpa sucesso se falhou
         }
     }
 

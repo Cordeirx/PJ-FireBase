@@ -1,8 +1,8 @@
-import { 
-    createUserWithEmailAndPassword, 
-    signInWithEmailAndPassword, 
-    signOut, 
-    onAuthStateChanged 
+import {
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged
 } from "firebase/auth";
 
 import { doc, setDoc } from 'firebase/firestore';
@@ -28,29 +28,32 @@ export function useAuth() {
             const userCredential = await createUserWithEmailAndPassword(auth, email, password);
             const user = userCredential.user;
 
-            // Salvar no Firestore
             await setDoc(doc(db, "users", user.uid), {
-                uid: user.uid,
                 name,
                 bio,
-                email,
-                link
+                portfolio: link
             });
 
-            setError(null);
+            setError(null);  // limpa erro
+            return true;     // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false;    // indica falha
         }
     }
 
+
     async function login(email, password) {
-        setError(null);
         try {
             await signInWithEmailAndPassword(auth, email, password);
+            setError(null); // limpa o erro, se houver
+            return true;    // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false;   // indica falha
         }
     }
+
 
     async function logout() {
         setError(null);

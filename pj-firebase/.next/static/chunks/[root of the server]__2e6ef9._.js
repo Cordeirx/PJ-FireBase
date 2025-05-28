@@ -625,25 +625,26 @@ function useAuth() {
         try {
             const userCredential = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$8bd0c73f$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__ab__as__createUserWithEmailAndPassword$3e$__["createUserWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$client$5d$__$28$ecmascript$29$__["auth"], email, password);
             const user = userCredential.user;
-            // Salvar no Firestore
             await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$client$5d$__$28$ecmascript$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$client$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$client$5d$__$28$ecmascript$29$__["db"], "users", user.uid), {
-                uid: user.uid,
                 name,
                 bio,
-                email,
-                link
+                portfolio: link
             });
-            setError(null);
+            setError(null); // limpa erro
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function login(email, password) {
-        setError(null);
         try {
             await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$8bd0c73f$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__ac__as__signInWithEmailAndPassword$3e$__["signInWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$client$5d$__$28$ecmascript$29$__["auth"], email, password);
+            setError(null); // limpa o erro, se houver
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function logout() {
@@ -740,7 +741,7 @@ function Dashboard() {
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard.jsx",
                 lineNumber: 41,
-                columnNumber: 5
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: [
@@ -750,46 +751,39 @@ function Dashboard() {
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard.jsx",
                 lineNumber: 42,
-                columnNumber: 5
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                 children: [
                     "Portfólio: ",
-                    profile.portfolio ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                        href: profile.portfolio.startsWith('http') ? profile.portfolio : `https://${profile.portfolio}`,
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                        href: profile.link,
                         target: "_blank",
-                        rel: "noopener noreferrer",
                         children: "Ver Agora"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/dashboard.jsx",
-                        lineNumber: 45,
-                        columnNumber: 9
-                    }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: "Portfólio não disponível"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/dashboard.jsx",
-                        lineNumber: 53,
-                        columnNumber: 9
+                        lineNumber: 44,
+                        columnNumber: 28
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/dashboard.jsx",
                 lineNumber: 43,
-                columnNumber: 5
+                columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                 onClick: handleLogout,
                 children: "Sair"
             }, void 0, false, {
                 fileName: "[project]/src/pages/dashboard.jsx",
-                lineNumber: 56,
-                columnNumber: 5
+                lineNumber: 48,
+                columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/dashboard.jsx",
         lineNumber: 40,
-        columnNumber: 3
+        columnNumber: 9
     }, this);
 }
 _s(Dashboard, "YZGOwgQD3eiY8LpvuVL42cZaiPE=", false, function() {

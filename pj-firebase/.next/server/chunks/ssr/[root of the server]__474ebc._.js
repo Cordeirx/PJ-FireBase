@@ -149,25 +149,26 @@ function useAuth() {
         try {
             const userCredential = await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$auth__$5b$external$5d$__$28$firebase$2f$auth$2c$__esm_import$29$__["createUserWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["auth"], email, password);
             const user = userCredential.user;
-            // Salvar no Firestore
             await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$firestore__$5b$external$5d$__$28$firebase$2f$firestore$2c$__esm_import$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$firestore__$5b$external$5d$__$28$firebase$2f$firestore$2c$__esm_import$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["db"], "users", user.uid), {
-                uid: user.uid,
                 name,
                 bio,
-                email,
-                link
+                portfolio: link
             });
-            setError(null);
+            setError(null); // limpa erro
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function login(email, password) {
-        setError(null);
         try {
             await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$auth__$5b$external$5d$__$28$firebase$2f$auth$2c$__esm_import$29$__["signInWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["auth"], email, password);
+            setError(null); // limpa o erro, se houver
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function logout() {
@@ -250,8 +251,10 @@ function Login() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["useRouter"])();
     async function handleSubmit(e) {
         e.preventDefault();
-        await login(email, password);
-        router.push("/dashboard"); // Redireciona para o Dashboard
+        const success = await login(email, password);
+        if (success) {
+            router.push("/dashboard");
+        }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         children: [
@@ -262,7 +265,7 @@ function Login() {
                         children: "E-mail"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 21,
+                        lineNumber: 23,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
@@ -272,14 +275,14 @@ function Login() {
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 22,
+                        lineNumber: 24,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
                         children: "Senha"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 29,
+                        lineNumber: 31,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
@@ -289,7 +292,7 @@ function Login() {
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 30,
+                        lineNumber: 32,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
@@ -297,20 +300,23 @@ function Login() {
                         children: "Entrar"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 17
                     }, this),
                     error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                        style: {
+                            color: 'red'
+                        },
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 39,
+                        lineNumber: 41,
                         columnNumber: 27
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/Login.jsx",
-                lineNumber: 20,
+                lineNumber: 22,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
@@ -321,19 +327,19 @@ function Login() {
                         children: "Cadastre-se aqui"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 42,
+                        lineNumber: 44,
                         columnNumber: 35
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/Login.jsx",
-                lineNumber: 42,
+                lineNumber: 44,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/Login.jsx",
-        lineNumber: 19,
+        lineNumber: 21,
         columnNumber: 9
     }, this);
 }

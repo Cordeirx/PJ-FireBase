@@ -625,25 +625,26 @@ function useAuth() {
         try {
             const userCredential = await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$8bd0c73f$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__ab__as__createUserWithEmailAndPassword$3e$__["createUserWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$client$5d$__$28$ecmascript$29$__["auth"], email, password);
             const user = userCredential.user;
-            // Salvar no Firestore
             await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$client$5d$__$28$ecmascript$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$firestore$2f$dist$2f$index$2e$esm2017$2e$js__$5b$client$5d$__$28$ecmascript$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$client$5d$__$28$ecmascript$29$__["db"], "users", user.uid), {
-                uid: user.uid,
                 name,
                 bio,
-                email,
-                link
+                portfolio: link
             });
-            setError(null);
+            setError(null); // limpa erro
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function login(email, password) {
-        setError(null);
         try {
             await (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$firebase$2f$auth$2f$dist$2f$esm2017$2f$index$2d$8bd0c73f$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__ac__as__signInWithEmailAndPassword$3e$__["signInWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$client$5d$__$28$ecmascript$29$__["auth"], email, password);
+            setError(null); // limpa o erro, se houver
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function logout() {
@@ -683,7 +684,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$rout
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js [client] (ecmascript)");
 ;
 var _s = __turbopack_refresh__.signature();
-'use client'; // Se estiver usando app router no Next.js 13+
+'use client';
 ;
 ;
 ;
@@ -700,13 +701,14 @@ function Register() {
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     async function handleSubmit(e) {
         e.preventDefault();
-        await register(email, password, name, bio, link);
-        if (!error) {
+        const success = await register(email, password, name, bio, link);
+        if (success) {
             setSuccess('Cadastro realizado com sucesso!');
-            // Aguarda 2 segundos e redireciona
             setTimeout(()=>{
                 router.push('/Login');
             }, 2000);
+        } else {
+            setSuccess(''); // limpa sucesso se falhou
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -718,7 +720,7 @@ function Register() {
                         children: "Nome completo"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 35,
+                        lineNumber: 36,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -728,14 +730,14 @@ function Register() {
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 36,
+                        lineNumber: 37,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         children: "Biografia (Curta)"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -745,14 +747,14 @@ function Register() {
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 44,
+                        lineNumber: 45,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         children: "Portfólio (Link)"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 51,
+                        lineNumber: 52,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -762,14 +764,14 @@ function Register() {
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         children: "E-mail"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 59,
+                        lineNumber: 60,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -779,14 +781,14 @@ function Register() {
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 60,
+                        lineNumber: 61,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                         children: "Senha"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 67,
+                        lineNumber: 68,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -796,7 +798,7 @@ function Register() {
                         required: true
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 68,
+                        lineNumber: 69,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -804,7 +806,7 @@ function Register() {
                         children: "Cadastrar"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 75,
+                        lineNumber: 76,
                         columnNumber: 17
                     }, this),
                     error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -814,7 +816,7 @@ function Register() {
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 27
                     }, this),
                     success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -824,13 +826,13 @@ function Register() {
                         children: success
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 78,
+                        lineNumber: 79,
                         columnNumber: 29
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/Register.jsx",
-                lineNumber: 34,
+                lineNumber: 35,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -841,19 +843,19 @@ function Register() {
                         children: "Faça login aqui"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 81,
+                        lineNumber: 82,
                         columnNumber: 34
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/Register.jsx",
-                lineNumber: 81,
+                lineNumber: 82,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/Register.jsx",
-        lineNumber: 33,
+        lineNumber: 34,
         columnNumber: 9
     }, this);
 }
