@@ -145,28 +145,30 @@ function useAuth() {
         });
         return unsubscribe;
     }, []);
-    async function register(email, password, name, username) {
+    async function register(email, password, name, bio, link) {
         try {
             const userCredential = await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$auth__$5b$external$5d$__$28$firebase$2f$auth$2c$__esm_import$29$__["createUserWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["auth"], email, password);
             const user = userCredential.user;
-            // Salvar no Firestore
             await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$firestore__$5b$external$5d$__$28$firebase$2f$firestore$2c$__esm_import$29$__["setDoc"])((0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$firestore__$5b$external$5d$__$28$firebase$2f$firestore$2c$__esm_import$29$__["doc"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["db"], "users", user.uid), {
-                uid: user.uid,
                 name,
-                username,
-                email
+                bio,
+                portfolio: link
             });
-            setError(null);
+            setError(null); // limpa erro
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function login(email, password) {
-        setError(null);
         try {
             await (0, __TURBOPACK__imported__module__$5b$externals$5d2f$firebase$2f$auth__$5b$external$5d$__$28$firebase$2f$auth$2c$__esm_import$29$__["signInWithEmailAndPassword"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$api$2f$firebase$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["auth"], email, password);
+            setError(null); // limpa o erro, se houver
+            return true; // indica sucesso
         } catch (err) {
             setError(err.message);
+            return false; // indica falha
         }
     }
     async function logout() {
@@ -208,10 +210,16 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$run
 var __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__ = __turbopack_import__("[externals]/react [external] (react, cjs)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useAuth$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/hooks/useAuth.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$router$2d$dom__$5b$external$5d$__$28$react$2d$router$2d$dom$2c$__cjs$29$__ = __turbopack_import__("[externals]/react-router-dom [external] (react-router-dom, cjs)");
+(()=>{
+    const e = new Error("Cannot find module '../components/Layout'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useAuth$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__
 ]);
 ([__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useAuth$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
+;
 ;
 ;
 ;
@@ -223,69 +231,103 @@ function Login() {
     const navigate = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$router$2d$dom__$5b$external$5d$__$28$react$2d$router$2d$dom$2c$__cjs$29$__["useNavigate"])();
     async function handleSubmit(e) {
         e.preventDefault();
-        await login(email, password);
-        navigate("/profile");
+        const success = await login(email, password);
+        if (success) {
+            navigate("/profile");
+        }
     }
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
-            onSubmit: handleSubmit,
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
-                    children: "E-mail"
-                }, void 0, false, {
-                    fileName: "[project]/src/pages/Login.jsx",
-                    lineNumber: 20,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                    type: "email",
-                    value: email,
-                    onChange: (e)=>setEmail(e.target.value)
-                }, void 0, false, {
-                    fileName: "[project]/src/pages/Login.jsx",
-                    lineNumber: 21,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
-                    children: "Senha"
-                }, void 0, false, {
-                    fileName: "[project]/src/pages/Login.jsx",
-                    lineNumber: 26,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                    type: "password",
-                    value: password,
-                    onChange: (e)=>setPassword(e.target.value)
-                }, void 0, false, {
-                    fileName: "[project]/src/pages/Login.jsx",
-                    lineNumber: 27,
-                    columnNumber: 17
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                    type: "submit",
-                    children: "Entrar"
-                }, void 0, false, {
-                    fileName: "[project]/src/pages/Login.jsx",
-                    lineNumber: 32,
-                    columnNumber: 17
-                }, this),
-                error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                    children: error
-                }, void 0, false, {
-                    fileName: "[project]/src/pages/Login.jsx",
-                    lineNumber: 33,
-                    columnNumber: 27
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/src/pages/Login.jsx",
-            lineNumber: 19,
-            columnNumber: 13
-        }, this)
-    }, void 0, false, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(Layout, {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
+                children: "Login"
+            }, void 0, false, {
+                fileName: "[project]/src/pages/Login.jsx",
+                lineNumber: 22,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
+                onSubmit: handleSubmit,
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                        children: "E-mail"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 24,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                        type: "email",
+                        value: email,
+                        onChange: (e)=>setEmail(e.target.value),
+                        required: true
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 25,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                        children: "Senha"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 32,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                        type: "password",
+                        value: password,
+                        onChange: (e)=>setPassword(e.target.value),
+                        required: true
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 33,
+                        columnNumber: 17
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                        type: "submit",
+                        children: "Entrar"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 40,
+                        columnNumber: 17
+                    }, this),
+                    error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                        className: "error",
+                        children: error
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 42,
+                        columnNumber: 27
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/pages/Login.jsx",
+                lineNumber: 23,
+                columnNumber: 13
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                style: {
+                    marginTop: '10px'
+                },
+                children: [
+                    "Não tem uma conta? ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2d$router$2d$dom__$5b$external$5d$__$28$react$2d$router$2d$dom$2c$__cjs$29$__["Link"], {
+                        to: "/register",
+                        children: "Cadastre-se aqui"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 46,
+                        columnNumber: 36
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/src/pages/Login.jsx",
+                lineNumber: 45,
+                columnNumber: 13
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/src/pages/Login.jsx",
-        lineNumber: 18,
+        lineNumber: 21,
         columnNumber: 9
     }, this);
 }

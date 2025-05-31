@@ -1,107 +1,165 @@
-// Diretiva obrigatória quando usando Next.js App Router no modo client-side.
 'use client';
 
-// Importa o hook useState para gerenciar estados locais no componente.
 import { useState } from "react";
-// Importa o hook personalizado useAuth, que contém a lógica de autenticação.
 import { useAuth } from "../hooks/useAuth";
-// Importa o hook useRouter do Next.js para fazer redirecionamentos programáticos.
 import { useRouter } from 'next/router';
-// Importa o componente Link do Next.js para criar navegação entre páginas sem recarregar.
 import Link from 'next/link';
+import styles from '../styles/Layout.module.css';
 
-// Define e exporta o componente Register.
 export default function Register() {
-    // Estados para armazenar os dados do formulário de cadastro.
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [bio, setBio] = useState('');
     const [link, setLink] = useState('');
     const [password, setPassword] = useState('');
-    const [success, setSuccess] = useState(''); // Mensagem de sucesso do cadastro.
+    const [success, setSuccess] = useState('');
 
-    // Obtém a função register e a variável de erro do hook de autenticação.
     const { register, error } = useAuth();
-
-    // Inicializa o roteador para redirecionamentos.
     const router = useRouter();
 
-    // Função que trata o envio do formulário de cadastro.
     async function handleSubmit(e) {
-        e.preventDefault(); // Previne o comportamento padrão de recarregar a página.
+        e.preventDefault();
 
-        // Chama a função de registro com os dados preenchidos.
         const success = await register(email, password, name, bio, link);
 
-        // Se o cadastro for bem-sucedido:
         if (success) {
-            // Define a mensagem de sucesso.
             setSuccess('Cadastro realizado com sucesso!');
-            // Aguarda 2 segundos e redireciona para a página de login.
             setTimeout(() => {
                 router.push('/Login');
             }, 2000);
         } else {
-            // Se falhar, limpa a mensagem de sucesso.
             setSuccess('');
         }
     }
 
-    // Renderiza o formulário de cadastro.
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div style={{
+            height: '100vh',
+            margin: 0,
+            backgroundColor: '#121212',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}>
+            <form 
+                onSubmit={handleSubmit}
+                style={{
+                    backgroundColor: '#1E1E1E',
+                    padding: '2rem',
+                    borderRadius: '8px',
+                    boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                    width: '320px',
+                    color: '#FFFFFF'
+                }}
+            >
+                <h2 style={{ color: '#FFFFFF', textAlign: 'center' }}>Cadastro</h2>
+
                 <label>Nome completo</label>
                 <input
                     type="text"
                     value={name}
-                    onChange={(e) => setName(e.target.value)} // Atualiza o estado 'name'.
+                    onChange={(e) => setName(e.target.value)}
                     required
+                    style={{
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }}
                 />
 
                 <label>Biografia (Curta)</label>
                 <input
                     type="text"
                     value={bio}
-                    onChange={(e) => setBio(e.target.value)} // Atualiza o estado 'bio'.
+                    onChange={(e) => setBio(e.target.value)}
                     required
+                    style={{
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }}
                 />
 
                 <label>Portfólio (Link)</label>
                 <input
                     type="url"
                     value={link}
-                    onChange={(e) => setLink(e.target.value)} // Atualiza o estado 'link'.
+                    onChange={(e) => setLink(e.target.value)}
                     required
+                    style={{
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }}
                 />
 
                 <label>E-mail</label>
                 <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)} // Atualiza o estado 'email'.
+                    onChange={(e) => setEmail(e.target.value)}
                     required
+                    style={{
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }}
                 />
 
                 <label>Senha</label>
                 <input
                     type="password"
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)} // Atualiza o estado 'password'.
+                    onChange={(e) => setPassword(e.target.value)}
                     required
+                    style={{
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }}
                 />
 
-                <button type="submit">Cadastrar</button>
+                <button
+                    type="submit"
+                    style={{
+                        padding: '0.7rem',
+                        borderRadius: '4px',
+                        backgroundColor: '#FFFFFF',
+                        color: '#121212',
+                        fontWeight: 'bold',
+                        border: 'none',
+                        cursor: 'pointer',
+                        transition: 'background 0.3s'
+                    }}
+                    onMouseOver={(e) => e.target.style.backgroundColor = '#E0E0E0'}
+                    onMouseOut={(e) => e.target.style.backgroundColor = '#FFFFFF'}
+                >
+                    Cadastrar
+                </button>
 
-                {/* Exibe a mensagem de erro, se houver, em vermelho. */}
-                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+                {success && <p style={{ color: 'lightgreen', textAlign: 'center' }}>{success}</p>}
 
-                {/* Exibe a mensagem de sucesso, se houver, em verde. */}
-                {success && <p style={{ color: 'green' }}>{success}</p>}
+                <p style={{ textAlign: 'center', color: '#FFFFFF' }}>
+                    Já tem uma conta?{' '}
+                    <Link href="/Login" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>
+                        Faça login aqui
+                    </Link>
+                </p>
             </form>
-
-            {/* Link para a página de login. */}
-            <p>Já tem uma conta? <Link href="/Login">Faça login aqui</Link></p>
         </div>
     );
 }

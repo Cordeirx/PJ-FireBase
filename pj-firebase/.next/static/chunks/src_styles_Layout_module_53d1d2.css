@@ -1,0 +1,14 @@
+/* [project]/src/styles/Layout.module.css [client] (css) */
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: "100vh";
+  background-color: "#121212";
+  display: "flex";
+  justify-content: "center";
+  align-items: "center";
+}
+
+
+/*# sourceMappingURL=src_styles_Layout_module_53d1d2.css.map*/

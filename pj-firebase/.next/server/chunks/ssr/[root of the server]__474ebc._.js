@@ -235,10 +235,16 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useAuth$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/src/hooks/useAuth.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/router.js [ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_import__("[project]/node_modules/next/link.js [ssr] (ecmascript)");
+(()=>{
+    const e = new Error("Cannot find module '../sLayout.module.css'");
+    e.code = 'MODULE_NOT_FOUND';
+    throw e;
+})();
 var __turbopack_async_dependencies__ = __turbopack_handle_async_dependencies__([
     __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useAuth$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__
 ]);
 ([__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$hooks$2f$useAuth$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__] = __turbopack_async_dependencies__.then ? (await __turbopack_async_dependencies__)() : __turbopack_async_dependencies__);
+;
 ;
 ;
 ;
@@ -257,89 +263,157 @@ function Login() {
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
+        style: {
+            height: '100vh',
+            margin: 0,
+            backgroundColor: '#121212',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center'
+        },
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
                 onSubmit: handleSubmit,
+                style: {
+                    backgroundColor: '#1E1E1E',
+                    padding: '2rem',
+                    borderRadius: '8px',
+                    boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '1rem',
+                    width: '300px',
+                    color: '#FFFFFF'
+                },
                 children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
+                        style: {
+                            color: '#FFFFFF',
+                            textAlign: 'center'
+                        },
+                        children: "Login"
+                    }, void 0, false, {
+                        fileName: "[project]/src/pages/Login.jsx",
+                        lineNumber: 45,
+                        columnNumber: 21
+                    }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
                         children: "E-mail"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 23,
-                        columnNumber: 17
+                        lineNumber: 47,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                         type: "email",
                         value: email,
                         onChange: (e)=>setEmail(e.target.value),
-                        required: true
+                        required: true,
+                        style: {
+                            padding: '0.5rem',
+                            borderRadius: '4px',
+                            border: '1px solid #FFFFFF',
+                            backgroundColor: '#2C2C2C',
+                            color: '#FFFFFF'
+                        }
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 24,
-                        columnNumber: 17
+                        lineNumber: 48,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
                         children: "Senha"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 31,
-                        columnNumber: 17
+                        lineNumber: 62,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
                         type: "password",
                         value: password,
                         onChange: (e)=>setPassword(e.target.value),
-                        required: true
+                        required: true,
+                        style: {
+                            padding: '0.5rem',
+                            borderRadius: '4px',
+                            border: '1px solid #FFFFFF',
+                            backgroundColor: '#2C2C2C',
+                            color: '#FFFFFF'
+                        }
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 32,
-                        columnNumber: 17
+                        lineNumber: 63,
+                        columnNumber: 21
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
                         type: "submit",
+                        style: {
+                            padding: '0.7rem',
+                            borderRadius: '4px',
+                            backgroundColor: '#FFFFFF',
+                            color: '#121212',
+                            fontWeight: 'bold',
+                            border: 'none',
+                            cursor: 'pointer',
+                            transition: 'background 0.3s'
+                        },
+                        onMouseOver: (e)=>e.target.style.backgroundColor = '#E0E0E0',
+                        onMouseOut: (e)=>e.target.style.backgroundColor = '#FFFFFF',
                         children: "Entrar"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 39,
-                        columnNumber: 17
+                        lineNumber: 77,
+                        columnNumber: 21
                     }, this),
                     error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
                         style: {
-                            color: 'red'
+                            color: 'red',
+                            textAlign: 'center'
                         },
                         children: error
                     }, void 0, false, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 41,
-                        columnNumber: 27
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/pages/Login.jsx",
-                lineNumber: 22,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                children: [
-                    "Não tem uma conta? ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        href: "/Register",
-                        children: "Cadastre-se aqui"
-                    }, void 0, false, {
+                        lineNumber: 95,
+                        columnNumber: 31
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                        style: {
+                            textAlign: 'center'
+                        },
+                        children: [
+                            "Não tem uma conta? ",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/Register",
+                                style: {
+                                    color: '#FFFFFF',
+                                    textDecoration: 'underline'
+                                },
+                                children: "Cadastre-se aqui"
+                            }, void 0, false, {
+                                fileName: "[project]/src/pages/Login.jsx",
+                                lineNumber: 98,
+                                columnNumber: 44
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/src/pages/Login.jsx",
-                        lineNumber: 44,
-                        columnNumber: 35
+                        lineNumber: 97,
+                        columnNumber: 21
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/Login.jsx",
-                lineNumber: 44,
-                columnNumber: 13
+                lineNumber: 31,
+                columnNumber: 17
             }, this)
-        ]
-    }, void 0, true, {
+        }, void 0, false, {
+            fileName: "[project]/src/pages/Login.jsx",
+            lineNumber: 30,
+            columnNumber: 13
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/src/pages/Login.jsx",
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 9
     }, this);
 }

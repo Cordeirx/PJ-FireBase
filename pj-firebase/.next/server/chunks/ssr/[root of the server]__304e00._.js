@@ -263,154 +263,232 @@ function Register() {
                 router.push('/Login');
             }, 2000);
         } else {
-            setSuccess(''); // limpa sucesso se falhou
+            setSuccess('');
         }
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
-                onSubmit: handleSubmit,
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
-                        children: "Nome completo"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 36,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                        type: "text",
-                        value: name,
-                        onChange: (e)=>setName(e.target.value),
-                        required: true
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 37,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
-                        children: "Biografia (Curta)"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 44,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                        type: "text",
-                        value: bio,
-                        onChange: (e)=>setBio(e.target.value),
-                        required: true
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 45,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
-                        children: "Portfólio (Link)"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 52,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                        type: "url",
-                        value: link,
-                        onChange: (e)=>setLink(e.target.value),
-                        required: true
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 53,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
-                        children: "E-mail"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 60,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                        type: "email",
-                        value: email,
-                        onChange: (e)=>setEmail(e.target.value),
-                        required: true
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 61,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
-                        children: "Senha"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 68,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
-                        type: "password",
-                        value: password,
-                        onChange: (e)=>setPassword(e.target.value),
-                        required: true
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 69,
-                        columnNumber: 17
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                        type: "submit",
-                        children: "Cadastrar"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 76,
-                        columnNumber: 17
-                    }, this),
-                    error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                        style: {
-                            color: 'red'
-                        },
-                        children: error
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 78,
-                        columnNumber: 27
-                    }, this),
-                    success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                        style: {
-                            color: 'green'
-                        },
-                        children: success
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 79,
-                        columnNumber: 29
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/pages/Register.jsx",
-                lineNumber: 35,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                children: [
-                    "Já tem uma conta? ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                        href: "/Login",
-                        children: "Faça login aqui"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/Register.jsx",
-                        lineNumber: 82,
-                        columnNumber: 34
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/pages/Register.jsx",
-                lineNumber: 82,
-                columnNumber: 13
-            }, this)
-        ]
-    }, void 0, true, {
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("form", {
+            onSubmit: handleSubmit,
+            style: {
+                backgroundColor: '#1E1E1E',
+                padding: '2rem',
+                borderRadius: '8px',
+                boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                width: '320px',
+                color: '#FFFFFF'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
+                    style: {
+                        color: '#FFFFFF',
+                        textAlign: 'center'
+                    },
+                    children: "Cadastro"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 51,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                    children: "Nome completo"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 53,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                    type: "text",
+                    value: name,
+                    onChange: (e)=>setName(e.target.value),
+                    required: true,
+                    style: {
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 54,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                    children: "Biografia (Curta)"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 68,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                    type: "text",
+                    value: bio,
+                    onChange: (e)=>setBio(e.target.value),
+                    required: true,
+                    style: {
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 69,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                    children: "Portfólio (Link)"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 83,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                    type: "url",
+                    value: link,
+                    onChange: (e)=>setLink(e.target.value),
+                    required: true,
+                    style: {
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 84,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                    children: "E-mail"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 98,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                    type: "email",
+                    value: email,
+                    onChange: (e)=>setEmail(e.target.value),
+                    required: true,
+                    style: {
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 99,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("label", {
+                    children: "Senha"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 113,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("input", {
+                    type: "password",
+                    value: password,
+                    onChange: (e)=>setPassword(e.target.value),
+                    required: true,
+                    style: {
+                        padding: '0.5rem',
+                        borderRadius: '4px',
+                        border: '1px solid #FFFFFF',
+                        backgroundColor: '#2C2C2C',
+                        color: '#FFFFFF'
+                    }
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 114,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                    type: "submit",
+                    style: {
+                        padding: '0.7rem',
+                        borderRadius: '4px',
+                        backgroundColor: '#FFFFFF',
+                        color: '#121212',
+                        fontWeight: 'bold',
+                        border: 'none',
+                        cursor: 'pointer',
+                        transition: 'background 0.3s'
+                    },
+                    onMouseOver: (e)=>e.target.style.backgroundColor = '#E0E0E0',
+                    onMouseOut: (e)=>e.target.style.backgroundColor = '#FFFFFF',
+                    children: "Cadastrar"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 128,
+                    columnNumber: 17
+                }, this),
+                error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                    style: {
+                        color: 'red',
+                        textAlign: 'center'
+                    },
+                    children: error
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 146,
+                    columnNumber: 27
+                }, this),
+                success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                    style: {
+                        color: 'lightgreen',
+                        textAlign: 'center'
+                    },
+                    children: success
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 147,
+                    columnNumber: 29
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                    style: {
+                        textAlign: 'center',
+                        color: '#FFFFFF'
+                    },
+                    children: [
+                        "Já tem uma conta?",
+                        ' ',
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                            href: "/Login",
+                            style: {
+                                color: '#FFFFFF',
+                                textDecoration: 'underline'
+                            },
+                            children: "Faça login aqui"
+                        }, void 0, false, {
+                            fileName: "[project]/src/pages/Register.jsx",
+                            lineNumber: 151,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/pages/Register.jsx",
+                    lineNumber: 149,
+                    columnNumber: 17
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/pages/Register.jsx",
+            lineNumber: 37,
+            columnNumber: 13
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/src/pages/Register.jsx",
-        lineNumber: 34,
+        lineNumber: 36,
         columnNumber: 9
     }, this);
 }

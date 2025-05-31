@@ -62,60 +62,43 @@ function Home() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
-                children: "Bem-vindo ao PJ Firebase"
+                children: "Bem-vindo ao sistema de autenticação"
             }, void 0, false, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 4,
-                columnNumber: 13
+                lineNumber: 6,
+                columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                children: "Escolha uma opção:"
-            }, void 0, false, {
-                fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 5,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("ul", {
                 children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
-                            href: "/Register",
-                            children: "Cadastrar"
-                        }, void 0, false, {
-                            fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 7,
-                            columnNumber: 21
-                        }, this)
+                    "Ir para ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                        href: "/Register",
+                        children: "Cadastro"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
                         lineNumber: 7,
-                        columnNumber: 17
+                        columnNumber: 18
                     }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
-                            href: "/Login",
-                            children: "Login"
-                        }, void 0, false, {
-                            fileName: "[project]/src/pages/index.jsx",
-                            lineNumber: 8,
-                            columnNumber: 21
-                        }, this)
+                    " ou ",
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                        href: "/Login",
+                        children: "Login"
                     }, void 0, false, {
                         fileName: "[project]/src/pages/index.jsx",
-                        lineNumber: 8,
-                        columnNumber: 17
+                        lineNumber: 7,
+                        columnNumber: 54
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/pages/index.jsx",
-                lineNumber: 6,
-                columnNumber: 13
+                lineNumber: 7,
+                columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/pages/index.jsx",
-        lineNumber: 3,
-        columnNumber: 9
+        lineNumber: 5,
+        columnNumber: 5
     }, this);
 }
 }}),

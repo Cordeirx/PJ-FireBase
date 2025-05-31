@@ -2,6 +2,6 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/Lericzin/Documents/GitHub/PJ-FireBase/pj-firebase/src/pages/index.jsx"],"sourcesContent":["export default function Home() {\r\n    return (\r\n        <div>\r\n            <h1>Bem-vindo ao PJ Firebase</h1>\r\n            <p>Escolha uma opção:</p>\r\n            <ul>\r\n                <li><a href=\"/Register\">Cadastrar</a></li>\r\n                <li><a href=\"/Login\">Login</a></li>\r\n            </ul>\r\n        </div>\r\n    );\r\n}\r\n"],"names":[],"mappings":";;;;;AAAe,SAAS;IACpB,qBACI,qKAAC;;0BACG,qKAAC;0BAAG;;;;;;0BACJ,qKAAC;0BAAE;;;;;;0BACH,qKAAC;;kCACG,qKAAC;kCAAG,cAAA,qKAAC;4BAAE,MAAK;sCAAY;;;;;;;;;;;kCACxB,qKAAC;kCAAG,cAAA,qKAAC;4BAAE,MAAK;sCAAS;;;;;;;;;;;;;;;;;;;;;;;AAIrC"}},
-    {"offset": {"line": 120, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":["file://C%3A/Users/Lericzin/Documents/GitHub/PJ-FireBase/pj-firebase/src/pages/index.jsx"],"sourcesContent":["\r\n\r\nexport default function Home() {\r\n  return (\r\n    <div>\r\n      <h1>Bem-vindo ao sistema de autenticação</h1>\r\n      <p>Ir para <a href=\"/Register\">Cadastro</a> ou <a href=\"/Login\">Login</a></p>\r\n    </div>\r\n  );\r\n}\r\n"],"names":[],"mappings":";;;;;AAEe,SAAS;IACtB,qBACE,qKAAC;;0BACC,qKAAC;0BAAG;;;;;;0BACJ,qKAAC;;oBAAE;kCAAQ,qKAAC;wBAAE,MAAK;kCAAY;;;;;;oBAAY;kCAAI,qKAAC;wBAAE,MAAK;kCAAS;;;;;;;;;;;;;;;;;;AAGtE"}},
+    {"offset": {"line": 103, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
 }

@@ -10,7 +10,8 @@
     "static/chunks/node_modules_@firebase_auth_dist_esm2017_fab3d3._.js",
     "static/chunks/node_modules_@firebase_firestore_dist_index_esm2017_06c08c.js",
     "static/chunks/node_modules_7b9c66._.js",
-    "static/chunks/[root of the server]__894e53._.js"
+    "static/chunks/[root of the server]__544c35._.js",
+    "static/chunks/src_styles_Layout_module_53d1d2.css"
   ],
   "source": "entry"
 });

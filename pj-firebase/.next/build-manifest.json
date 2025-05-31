@@ -8,15 +8,14 @@
       "static/chunks/src_pages__app_5771e1._.js",
       "static/chunks/src_pages__app_de6ec1._.js"
     ],
-    "/dashboard": [
-      "static/chunks/node_modules_next_3fff62._.js",
+    "/": [
+      "static/chunks/node_modules_next_dist_f1b02b._.js",
       "static/chunks/node_modules_react-dom_82bb97._.js",
-      "static/chunks/node_modules_@firebase_auth_dist_esm2017_fab3d3._.js",
-      "static/chunks/node_modules_@firebase_firestore_dist_index_esm2017_06c08c.js",
-      "static/chunks/node_modules_7b9c66._.js",
-      "static/chunks/[root of the server]__2e6ef9._.js",
-      "static/chunks/src_pages_dashboard_5771e1._.js",
-      "static/chunks/src_pages_dashboard_1096e0._.js"
+      "static/chunks/node_modules_1b7400._.js",
+      "static/chunks/[root of the server]__4690d1._.js",
+      "static/chunks/src_styles_Layout_module_53d1d2.css",
+      "static/chunks/src_pages_index_5771e1._.js",
+      "static/chunks/src_pages_index_a9ed9f._.js"
     ],
     "/Login": [
       "static/chunks/node_modules_next_9be927._.js",
@@ -24,9 +23,29 @@
       "static/chunks/node_modules_@firebase_auth_dist_esm2017_fab3d3._.js",
       "static/chunks/node_modules_@firebase_firestore_dist_index_esm2017_06c08c.js",
       "static/chunks/node_modules_7b9c66._.js",
-      "static/chunks/[root of the server]__894e53._.js",
+      "static/chunks/[root of the server]__544c35._.js",
+      "static/chunks/src_styles_Layout_module_53d1d2.css",
       "static/chunks/src_pages_Login_5771e1._.js",
-      "static/chunks/src_pages_Login_2d1718._.js"
+      "static/chunks/src_pages_Login_e4754e._.js"
+    ],
+    "/_error": [
+      "static/chunks/[root of the server]__31723f._.js",
+      "static/chunks/node_modules_react-dom_82bb97._.js",
+      "static/chunks/node_modules_beb007._.js",
+      "static/chunks/[root of the server]__e5d775._.js",
+      "static/chunks/src_pages__error_5771e1._.js",
+      "static/chunks/src_pages__error_ba917a._.js"
+    ],
+    "/dashboard": [
+      "static/chunks/node_modules_next_3fff62._.js",
+      "static/chunks/node_modules_react-dom_82bb97._.js",
+      "static/chunks/node_modules_@firebase_auth_dist_esm2017_fab3d3._.js",
+      "static/chunks/node_modules_@firebase_firestore_dist_index_esm2017_06c08c.js",
+      "static/chunks/node_modules_7b9c66._.js",
+      "static/chunks/[root of the server]__a01467._.js",
+      "static/chunks/src_styles_Layout_module_53d1d2.css",
+      "static/chunks/src_pages_dashboard_5771e1._.js",
+      "static/chunks/src_pages_dashboard_aa0d50._.js"
     ],
     "/Register": [
       "static/chunks/node_modules_next_9be927._.js",
@@ -34,9 +53,10 @@
       "static/chunks/node_modules_@firebase_auth_dist_esm2017_fab3d3._.js",
       "static/chunks/node_modules_@firebase_firestore_dist_index_esm2017_06c08c.js",
       "static/chunks/node_modules_7b9c66._.js",
-      "static/chunks/[root of the server]__0e5466._.js",
+      "static/chunks/[root of the server]__82ccd5._.js",
+      "static/chunks/src_styles_Layout_module_53d1d2.css",
       "static/chunks/src_pages_Register_5771e1._.js",
-      "static/chunks/src_pages_Register_b14790._.js"
+      "static/chunks/src_pages_Register_4a9726._.js"
     ]
   },
   "devFiles": [],

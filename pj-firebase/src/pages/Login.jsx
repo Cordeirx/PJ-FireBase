@@ -1,66 +1,104 @@
-// Importa o hook useState para gerenciar estados locais no componente.
 import { useState } from "react";
-// Importa o hook personalizado useAuth que provavelmente contém a lógica de autenticação.
 import { useAuth } from "../hooks/useAuth";
-// Importa o hook useRouter do Next.js para navegação programática.
 import { useRouter } from 'next/router';
-// Importa o componente Link do Next.js para navegação entre páginas sem recarregar.
 import Link from 'next/link';
+import styles from '../styles/Layout.module.css';
 
-// Define e exporta o componente Login
 export default function Login() {
-    // Define os estados para armazenar o e-mail e a senha digitados pelo usuário.
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    
-    // Obtém as funções login e error do contexto de autenticação.
     const { login, error } = useAuth();
-
-    // Inicializa o roteador para permitir redirecionamentos.
     const router = useRouter();
 
-    // Função chamada ao submeter o formulário de login.
     async function handleSubmit(e) {
-        e.preventDefault(); // Previne o comportamento padrão de recarregar a página.
-        
-        // Chama a função login passando o e-mail e a senha.
+        e.preventDefault();
         const success = await login(email, password);
-        
-        // Se o login for bem-sucedido, redireciona para a página de dashboard.
         if (success) {
             router.push("/dashboard");
         }
-        // Se não for bem-sucedido, o erro será exibido abaixo através de {error}
     }
 
-    // Renderiza o formulário de login.
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <label>E-mail</label>
-                <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} // Atualiza o estado de email.
-                    required // Campo obrigatório.
-                />
+        <div style={{
+            height: '100vh',
+            margin: 0,
+            backgroundColor: '#121212',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+        }}>
+            <div>
+                <form 
+                    onSubmit={handleSubmit} 
+                    style={{
+                        backgroundColor: '#1E1E1E',
+                        padding: '2rem',
+                        borderRadius: '8px',
+                        boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)', // sombra branca
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '1rem',
+                        width: '300px',
+                        color: '#FFFFFF'
+                    }}
+                >
+                    <h2 style={{ color: '#FFFFFF', textAlign: 'center' }}>Login</h2>
 
-                <label>Senha</label>
-                <input
-                    type="password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)} // Atualiza o estado de senha.
-                    required // Campo obrigatório.
-                />
+                    <label>E-mail</label>
+                    <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        style={{
+                            padding: '0.5rem',
+                            borderRadius: '4px',
+                            border: '1px solid #FFFFFF',
+                            backgroundColor: '#2C2C2C',
+                            color: '#FFFFFF'
+                        }}
+                    />
 
-                <button type="submit">Entrar</button>
+                    <label>Senha</label>
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                        style={{
+                            padding: '0.5rem',
+                            borderRadius: '4px',
+                            border: '1px solid #FFFFFF',
+                            backgroundColor: '#2C2C2C',
+                            color: '#FFFFFF'
+                        }}
+                    />
 
-                {/* Exibe a mensagem de erro, se houver, em vermelho. */}
-                {error && <p style={{ color: 'red' }}>{error}</p>}
-            </form>
+                    <button 
+                        type="submit"
+                        style={{
+                            padding: '0.7rem',
+                            borderRadius: '4px',
+                            backgroundColor: '#FFFFFF',
+                            color: '#121212',
+                            fontWeight: 'bold',
+                            border: 'none',
+                            cursor: 'pointer',
+                            transition: 'background 0.3s'
+                        }}
+                        onMouseOver={(e) => e.target.style.backgroundColor = '#E0E0E0'}
+                        onMouseOut={(e) => e.target.style.backgroundColor = '#FFFFFF'}
+                    >
+                        Entrar
+                    </button>
 
-            {/* Link para a página de cadastro. */}
-            <p>Não tem uma conta? <Link href="/Register">Cadastre-se aqui</Link></p>
+                    {error && <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>}
+
+                    <p style={{ textAlign: 'center' }}>
+                        Não tem uma conta? <Link href="/Register" style={{ color: '#FFFFFF', textDecoration: 'underline' }}>Cadastre-se aqui</Link>
+                    </p>
+                </form>
+            </div>
         </div>
     );
 }

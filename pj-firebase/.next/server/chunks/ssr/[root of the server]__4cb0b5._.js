@@ -254,7 +254,7 @@ function Dashboard() {
     const [profile, setProfile] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
         if (!loading && !user) {
-            router.push('/'); // Se não estiver logado, volta pro Login
+            router.push('/');
         }
         async function fetchProfile() {
             if (user) {
@@ -272,12 +272,30 @@ function Dashboard() {
         router
     ]);
     if (loading || !profile) {
-        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-            children: "Carregando..."
+        return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+            style: {
+                minHeight: '100vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#121212',
+                color: '#FFFFFF'
+            },
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                style: {
+                    color: '#9F7AEA' /* roxo claro */ ,
+                    fontWeight: 'bold'
+                },
+                children: "Carregando..."
+            }, void 0, false, {
+                fileName: "[project]/src/pages/dashboard.jsx",
+                lineNumber: 40,
+                columnNumber: 17
+            }, this)
         }, void 0, false, {
             fileName: "[project]/src/pages/dashboard.jsx",
-            lineNumber: 31,
-            columnNumber: 16
+            lineNumber: 32,
+            columnNumber: 13
         }, this);
     }
     async function handleLogout() {
@@ -285,58 +303,126 @@ function Dashboard() {
         router.push('/');
     }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
-                children: [
-                    "Bem-vindo, ",
-                    profile.name,
-                    "!"
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/pages/dashboard.jsx",
-                lineNumber: 41,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                children: [
-                    "Bio: ",
-                    profile.bio
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/pages/dashboard.jsx",
-                lineNumber: 42,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
-                children: [
-                    "Portfólio: ",
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
-                        href: profile.link,
-                        target: "_blank",
-                        children: "Ver Agora"
-                    }, void 0, false, {
-                        fileName: "[project]/src/pages/dashboard.jsx",
-                        lineNumber: 44,
-                        columnNumber: 28
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/src/pages/dashboard.jsx",
-                lineNumber: 43,
-                columnNumber: 13
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                onClick: handleLogout,
-                children: "Sair"
-            }, void 0, false, {
-                fileName: "[project]/src/pages/dashboard.jsx",
-                lineNumber: 48,
-                columnNumber: 13
-            }, this)
-        ]
-    }, void 0, true, {
+        style: {
+            minHeight: '100vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#121212',
+            margin: 0
+        },
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+            style: {
+                backgroundColor: '#1E1E1E',
+                padding: '2rem',
+                borderRadius: '8px',
+                boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '1rem',
+                width: '320px',
+                color: '#FFFFFF',
+                textAlign: 'center'
+            },
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
+                    style: {
+                        color: '#FFFFFF',
+                        fontWeight: 'bold',
+                        fontSize: '1.8rem',
+                        marginBottom: '1rem'
+                    },
+                    children: [
+                        profile.name,
+                        "!"
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/pages/dashboard.jsx",
+                    lineNumber: 71,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                    style: {
+                        marginBottom: '0.5rem'
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("strong", {
+                            children: "Bio:"
+                        }, void 0, false, {
+                            fileName: "[project]/src/pages/dashboard.jsx",
+                            lineNumber: 75,
+                            columnNumber: 21
+                        }, this),
+                        " ",
+                        profile.bio
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/pages/dashboard.jsx",
+                    lineNumber: 74,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                    style: {
+                        marginBottom: '1rem'
+                    },
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("strong", {
+                            children: "Portfólio:"
+                        }, void 0, false, {
+                            fileName: "[project]/src/pages/dashboard.jsx",
+                            lineNumber: 78,
+                            columnNumber: 21
+                        }, this),
+                        ' ',
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                            href: profile.link,
+                            target: "_blank",
+                            rel: "noopener noreferrer",
+                            style: {
+                                color: '#9F7AEA',
+                                textDecoration: 'underline'
+                            },
+                            children: "Ver Agora"
+                        }, void 0, false, {
+                            fileName: "[project]/src/pages/dashboard.jsx",
+                            lineNumber: 79,
+                            columnNumber: 21
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/src/pages/dashboard.jsx",
+                    lineNumber: 77,
+                    columnNumber: 17
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                    onClick: handleLogout,
+                    style: {
+                        padding: '0.7rem',
+                        borderRadius: '4px',
+                        backgroundColor: '#E53E3E',
+                        color: '#FFFFFF',
+                        fontWeight: 'bold',
+                        border: 'none',
+                        cursor: 'pointer',
+                        transition: 'background 0.3s'
+                    },
+                    onMouseOver: (e)=>e.currentTarget.style.backgroundColor = '#C53030',
+                    onMouseOut: (e)=>e.currentTarget.style.backgroundColor = '#E53E3E',
+                    children: "Sair"
+                }, void 0, false, {
+                    fileName: "[project]/src/pages/dashboard.jsx",
+                    lineNumber: 88,
+                    columnNumber: 17
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/src/pages/dashboard.jsx",
+            lineNumber: 59,
+            columnNumber: 13
+        }, this)
+    }, void 0, false, {
         fileName: "[project]/src/pages/dashboard.jsx",
-        lineNumber: 40,
+        lineNumber: 51,
         columnNumber: 9
     }, this);
 }
