@@ -1,70 +1,80 @@
-# Getting Started with Create React App
+1- Clone ou extraia o código do projeto:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
+No terminal, instale as dependências:
 
-## Available Scripts
+npm install
 
-In the project directory, you can run:
+ou
 
-### `npm start`
+yarn install
+Crie um arquivo .env.local na raiz do projeto e adicione as variáveis do Firebase, exemplo:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+NEXT_PUBLIC_FIREBASE_API_KEY="sua-apiKey-aqui"
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="seu-authDomain.firebaseapp.com"
+NEXT_PUBLIC_FIREBASE_PROJECT_ID="seu-projectId"
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET="seu-storageBucket.appspot.com"
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="seu-messagingSenderId"
+NEXT_PUBLIC_FIREBASE_APP_ID="seu-appId"
+Atualize o arquivo firebase.js ou firebase.ts para usar as variáveis de ambiente, exemplo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+};
+Para rodar localmente:
 
-### `npm test`
+npm run dev
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ou
 
-### `npm run build`
+yarn dev
+Abra no navegador:
+http://localhost:3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2- Testar
+Acesse a rota /Register e cadastre um novo usuário preenchendo email, senha, nome, bio e link do portfólio.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Após o cadastro, uma mensagem de sucesso será exibida e, em seguida, o usuário será redirecionado para a página de Login.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Faça login com os dados cadastrados.
 
-### `npm run eject`
+Você será redirecionado para o Dashboard, onde poderá ver o seu nome, bio e link do portfólio.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O link poderá ser clicado e abrirá em uma nova aba.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Use o botão "Sair" para realizar o logout.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3- Principais tecnologias e bibliotecas utilizadas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Next.js — Framework React para renderização SSR e rotas automáticas.
 
-## Learn More
+React.js — Biblioteca para construir a interface do usuário.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Firebase Authentication — Gerenciamento de autenticação por e-mail e senha.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Firestore (Firebase) — Banco de dados NoSQL para armazenar perfis dos usuários.
 
-### Code Splitting
+TailwindCSS — Framework CSS para estilização rápida e responsiva.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+React Hooks — Como useState, useEffect e useContext para gerenciar estados e contexto de autenticação.
 
-### Analyzing the Bundle Size
+4- Funcionalidades principais
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Cadastro de usuários com campos personalizados: nome, bio e link do portfólio.
 
-### Making a Progressive Web App
+Login e logout seguros.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Proteção de rotas: usuários não autenticados são redirecionados para a página de Login.
 
-### Advanced Configuration
+Dashboard com dados do perfil recuperados do Firestore.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Exibição de mensagens de erro e sucesso para melhor experiência do usuário.
 
-### Deployment
+Link de portfólio funcional, abrindo em nova aba.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
