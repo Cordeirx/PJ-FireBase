@@ -1,6 +1,12 @@
 *Sistema de Autenticação com Next.js e Firebase*
 
+<<<<<<< HEAD
 Instruções para configurar e rodar o projeto localmente
+=======
+git clone [https://github.com/Cordeirx/PJ-FireBase.git]
+cd seu-repositorio
+No terminal, instale as dependências:
+>>>>>>> ed6039d345369d7c35efaf29206c0ec5046bd67d
 
 Pré-requisitos:
 
