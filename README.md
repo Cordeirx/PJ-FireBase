@@ -1,15 +1,54 @@
-1- Clone ou extraia o código do projeto:
+*Sistema de Autenticação com Next.js e Firebase*
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-No terminal, instale as dependências:
+Instruções para configurar e rodar o projeto localmente
 
+Pré-requisitos:
+
+ -Node.js instalado (versão recomendada: 16 ou superior)
+
+ -Conta no Firebase e um projeto criado
+
+*Configurar o Firebase:*
+
+1. Acesse o Firebase Console e crie um novo projeto (ou use um existente).
+
+2. No projeto Firebase, ative o método de autenticação:
+
+ -Vá em Authentication > Método de login
+
+ -Ative a opção Email/senha
+
+3. Configure o Firestore:
+
+ -Vá em Firestore Database e crie um banco de dados no modo produção ou teste.
+
+ -Na aba Regras, cole as regras abaixo e publique para permitir acesso aos perfis:
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
+
+4. Obtenha as credenciais do seu app:
+
+ -Vá em Configurações do projeto > Aplicativos
+
+ -Adicione um app web (caso ainda não tenha)
+
+ -Copie o objeto de configuração do Firebase (apiKey, authDomain, projectId, etc.)
+
+*Configurar o projeto localmente:*
+
+1. Clone ou extraia o código do projeto.
+
+2. No terminal, navegue até a pasta do projeto e rode:
 npm install
 
-ou
-
-yarn install
-Crie um arquivo .env.local na raiz do projeto e adicione as variáveis do Firebase, exemplo:
+3. Crie um arquivo .env.local na raiz do projeto e adicione as variáveis do Firebase, exemplo:
 
 NEXT_PUBLIC_FIREBASE_API_KEY="sua-apiKey-aqui"
 NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN="seu-authDomain.firebaseapp.com"
@@ -17,7 +56,8 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID="seu-projectId"
 NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET="seu-storageBucket.appspot.com"
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID="seu-messagingSenderId"
 NEXT_PUBLIC_FIREBASE_APP_ID="seu-appId"
-Atualize o arquivo firebase.js ou firebase.ts para usar as variáveis de ambiente, exemplo:
+
+4. Atualize o arquivo firebase.js para usar as variáveis de ambiente, exemplo:
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -27,54 +67,47 @@ const firebaseConfig = {
   messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
-Para rodar localmente:
+
+5. Para rodar localmente:
 
 npm run dev
 
-ou
+6. Abra o navegador em:
 
-yarn dev
-Abra no navegador:
 http://localhost:3000
 
-2- Testar
-Acesse a rota /Register e cadastre um novo usuário preenchendo email, senha, nome, bio e link do portfólio.
+*Testar:*
 
-Após o cadastro, uma mensagem de sucesso será exibida e, em seguida, o usuário será redirecionado para a página de Login.
+ -Cadastre um novo usuário preenchendo email, senha, nome, bio e link no formulário de cadastro.
 
-Faça login com os dados cadastrados.
+ -Após o cadastro, o usuário será direcionado para a página de dashboard que mostra os dados salvos.
 
-Você será redirecionado para o Dashboard, onde poderá ver o seu nome, bio e link do portfólio.
+ -Faça login com usuários existentes e veja o perfil.
 
-O link poderá ser clicado e abrirá em uma nova aba.
+ -Use o botão logout para sair.
 
-Use o botão "Sair" para realizar o logout.
+*Principais tecnologias e bibliotecas utilizadas:*
+ -Next.js — Framework para desenvolvimento de aplicações React com renderização híbrida.
 
-3- Principais tecnologias e bibliotecas utilizadas
+ -Firebase Authentication — Gerenciamento de autenticação por email e senha.
 
-Next.js — Framework React para renderização SSR e rotas automáticas.
+ -Firestore (Firebase) — Banco de dados NoSQL para salvar e ler perfis dos usuários.
 
-React.js — Biblioteca para construir a interface do usuário.
+ -CSS Customizado — Estilização moderna com tema dark e detalhes em roxo.
 
-Firebase Authentication — Gerenciamento de autenticação por e-mail e senha.
+ -JavaScript ES6+ — Sintaxe moderna e concisa.
 
-Firestore (Firebase) — Banco de dados NoSQL para armazenar perfis dos usuários.
+ *Fluxo do usuário:*
 
-TailwindCSS — Framework CSS para estilização rápida e responsiva.
+1. Cadastro: usuário se registra informando nome, bio, link, email e senha.
 
-React Hooks — Como useState, useEffect e useContext para gerenciar estados e contexto de autenticação.
+2. Login: autentica-se na aplicação.
 
-4- Funcionalidades principais
+3. Dashboard: visualiza nome, bio e link clicável do portfólio.
 
-Cadastro de usuários com campos personalizados: nome, bio e link do portfólio.
+4. Logout: encerra a sessão.
 
-Login e logout seguros.
+*Autor:*
 
-Proteção de rotas: usuários não autenticados são redirecionados para a página de Login.
-
-Dashboard com dados do perfil recuperados do Firestore.
-
-Exibição de mensagens de erro e sucesso para melhor experiência do usuário.
-
-Link de portfólio funcional, abrindo em nova aba.
-
+Eric Cordeiro Santos
+TSI - 5° Sem
