@@ -1,6 +1,6 @@
 1- Clone ou extraia o código do projeto:
 
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone [https://github.com/Cordeirx/PJ-FireBase.git]
 cd seu-repositorio
 No terminal, instale as dependências:
 
